@@ -1,0 +1,10 @@
+name,r,g,b
+background,0,0,0
+crack,128,0,0
+cornerfracture,0,128,0
+seambroken,128,128,0
+patch,0,0,128
+repair,128,0,128
+slab,0,128,128
+track,128,128,128
+light,64,0,0
