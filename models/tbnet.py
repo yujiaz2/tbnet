@@ -87,7 +87,6 @@ def build_tbnet(inputs, num_classes, frontend="ResNet101",
     net_5_scaled = tf.multiply(global_channels, net_5)
 
     # The boundary stream
-    # The global-gated convolution
     conv1 = slim.conv2d(net_4, 512, kernel_size=[1, 1])
     
     res = slim.conv2d(conv1, 512, kernel_size=[3, 3], stride=[1, 1], activation_fn=None, normalizer_fn=None)
@@ -100,6 +99,7 @@ def build_tbnet(inputs, num_classes, frontend="ResNet101",
     net_5_scaled = Upsampling(net_5_scaled, scale=2)
     conv2 = slim.conv2d(net_5_scaled, 512, kernel_size=[1, 1])
 
+    # The global-gated convolution
     ggc = tf.concat([res, conv2], axis=-1)
     ggc = slim.batch_norm(ggc, fused=True)
     ggc = slim.conv2d(ggc, 512, kernel_size=[1, 1])
@@ -130,6 +130,3 @@ def build_tbnet(inputs, num_classes, frontend="ResNet101",
     net = slim.conv2d(net, num_classes, [1, 1], activation_fn=None, scope='logits')
 
     return net, init_fn, output_edge
-
-
-
