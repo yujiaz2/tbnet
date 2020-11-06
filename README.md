@@ -28,7 +28,7 @@ Set up the dataset folder in the following structure:
 |   |—— val_labels: annotations for validation images
 |   |—— val_edge_labels: binary boundary annotations for validation
 |   |—— test: gray-scale images for testing
-|   |—— test_labels: annotation for testing images
+|   |—— test_labels: annotations for testing images
 |   |—— test_edge_labels: binary boundary annotations for testing
 ```
 
@@ -51,7 +51,7 @@ light,64,0,0
 Run `python train_tbnet.py` with the following args:
 * `--num_epochs`: Number of epochs to train for.
 * `--dataset`: The dataset to use.
-* `--resize_height`: Height of the resized input image to network.
+* `--resize_height`: Height of resized input image to network.
 * `--resize_width`: Width of resized input image to network.
 * `--batch_size`: Number of images in each batch.
 * `--num_val_images`: The number of images to use for validation.
