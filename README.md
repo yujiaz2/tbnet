@@ -1,6 +1,6 @@
 # TB-Net
 
-TB-Net: A Three-Stream Boundary-Aware Network for Fine-Grained Pavement Disease Segmentation
+[TB-Net: A Three-Stream Boundary-Aware Network for Fine-Grained Pavement Disease Segmentation](https://arxiv.org/pdf/2011.03703.pdf)
 
 ## Introduction
 
